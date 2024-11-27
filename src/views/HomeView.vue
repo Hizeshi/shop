@@ -1,10 +1,12 @@
 <script setup>
 import { useCategoryStore } from '@/stores/category';
 import { useProductStore } from '@/stores/product';
+import { useCartStore } from '@/stores/cart';
 import { ref, watch } from 'vue';
 
 const productStore = useProductStore();
 const categoryStore = useCategoryStore();
+const cartStore = useCartStore();
 const category = ref(null);
 const searchText = ref('');
 const products = ref([]);
@@ -17,6 +19,10 @@ const resetFilters = () => {
     category.value = null;
     searchText.value = '';
     filterProducts();
+};
+
+const addToCart = (product) => {
+    cartStore.addProductToCart(product);
 };
 
 watch([category, searchText], filterProducts);
@@ -51,7 +57,7 @@ filterProducts();
                 </div>
                 <div class="card-footer text-end">
                     <RouterLink :to="{ name: 'product-detail', params: { id: product.id } }" class="btn btn-success me-2">Детали</RouterLink>
-                    <button type="button" class="btn btn-danger">В корзину</button> 
+                    <button type="button" class="btn btn-danger" @click="addToCart(product)">В корзину</button>
                 </div>
             </div>
         </div>
