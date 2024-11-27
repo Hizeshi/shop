@@ -10,6 +10,7 @@
           <p><strong>Цена:</strong> {{ product.price }} KZT</p>
           <p><strong>Дата публикации:</strong> {{ product.publish_at }}</p>
           <button type="button" class="btn btn-danger me-2" @click="addToCart">В корзину</button>
+          <router-link to="/" class="btn btn-light">家</router-link>
         </div>
       </div>
     </div>

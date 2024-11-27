@@ -1,11 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <RouterLink class="navbar-brand" to="/">UpgradeShop</RouterLink>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,10 +15,16 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink class="nav-link" to="/">Home</RouterLink>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <RouterLink class="nav-link" to="/cart">Cart</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/About">About</RouterLink>
+          <RouterLink class="nav-link" to="/checkout">Checkout</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/orders">Orders</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/about">About</RouterLink>
         </li>
       </ul>
     </div>
@@ -29,81 +34,130 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style>
-
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Arial', sans-serif;
+    background-color: #181818;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Стили для Navbar */
 .navbar {
-    background-color: #1f1f1f;
+    background-color: #282828;
     padding: 1rem;
 }
 
 .navbar-brand {
-    color: #4b0000;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .nav-link {
-    color: #8b3434; 
+    color: #ffffff; /* Белый цвет для ссылок */
     margin-right: 1rem;
+    background-color: transparent; /* Прозрачный фон для ссылок */
 }
 
 .nav-link:hover {
-    color: #821f1f;
+    color: #50fa7b; /* Цвет при наведении */
+    background-color: #343a40; /* Фон при наведении */
 }
 
 .navbar-toggler {
-    border-color: #d4af37;
+    border-color: #50fa7b;
 }
 
 .navbar-toggler-icon {
-    background-color: #d4af37;
+    background-color: #50fa7b;
 }
 
+/* Стили для карточек */
 .card {
-    background-color: #1c1c1c;
-    border: 1px solid #333;
+    background-color: #282828;
+    border: 1px solid #444;
+    border-radius: 8px;
 }
 
 .card-title {
-    color: #f5f5f5;
+    color: #ffffff;
 }
 
 .card-text {
-    color: #cfcfcf;
+    color: #aaaaaa;
 }
 
 .card-footer {
-    background-color: #1f1f1f;
+    background-color: #343a40;
+    border-top: 1px solid #444;
 }
 
+/* Стили для кнопок */
 .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: #50fa7b;
+    border-color: #50fa7b;
 }
 
 .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: #ff5555;
+    border-color: #ff5555;
 }
 
 .btn-dark {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #6272a4;
+    border-color: #6272a4;
 }
 
+.btn-primary {
+    background-color: #8be9fd;
+    border-color: #8be9fd;
+}
+
+.btn-secondary {
+    background-color: #bd93f9;
+    border-color: #bd93f9;
+}
+
+/* Стили для форм */
 .form-select, .form-control {
-    background-color: #2b2b2b;
-    color: #f5f5f5;
-    border-color: #333;
+    background-color: #282828;
+    color: #ffffff;
+    border-color: #444;
+    border-radius: 4px;
 }
 
 .form-select:focus, .form-control:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    border-color: #50fa7b;
+    box-shadow: 0 0 5px rgba(80, 250, 123, 0.5);
+}
+
+/* Стили для контейнеров */
+.container {
+    background-color: #181818;
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+h2, h4 {
+    color: #ffffff;
+}
+
+p {
+    color: #aaaaaa;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background-color: #2b2b2b;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
 }
 </style>
