@@ -40,7 +40,7 @@ filterProducts();
             <button type="button" class="btn btn-dark" @click="resetFilters">Reset</button>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
         <div class="col" v-for="product in products" :key="product.id">
             <div class="card">
                 <img :src="product.img" class="card-img-top" alt="...">
@@ -49,9 +49,9 @@ filterProducts();
                     <p class="card-text">{{ product.price }}</p>
                     <p class="card-text">{{ product.category }}</p>
                 </div>
-                <div class="card-footer text-enm">
-                    <button type="button" class="btn btn-success me-2">Detail</button>
-                    <button type="button" class="btn btn-danger">Cart</button>
+                <div class="card-footer text-end">
+                    <RouterLink :to="{ name: 'product-detail', params: { id: product.id } }" class="btn btn-success me-2">Детали</RouterLink>
+                    <button type="button" class="btn btn-danger">В корзину</button> 
                 </div>
             </div>
         </div>

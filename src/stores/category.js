@@ -2,10 +2,12 @@ import { defineStore } from "pinia";
 
 export const useCategoryStore = defineStore('category', () => {
     const categories = [
-        'Банан',
-        'Второй банан',
-        'Третий банан',
-        'Четвёртый банан',
+        'банан один',
+        'банан два',
+        'банан три',
+        'банан четыре',
+        'банан пять',
+        'банан шесть',
     ];  
     return{
         categories,
