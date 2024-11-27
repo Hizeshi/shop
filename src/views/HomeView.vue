@@ -19,10 +19,8 @@ const resetFilters = () => {
     filterProducts();
 };
 
-// Фильтрация при изменении category и searchText
 watch([category, searchText], filterProducts);
 
-// Инициализация фильтрации
 filterProducts();
 </script>
 
